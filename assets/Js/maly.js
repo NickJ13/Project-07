@@ -1,3 +1,20 @@
+var collegeCity = res[].city;
+var collegeCityText = $("<p1>").text(`${collegeCity}`);
+
+var collegeState = res.state;
+var collegeStateText = $("<p2>").text(`${collegeState}`);
+
+var collegeWebsite = res.school_url;
+var collegeWebsiteText = $("<p3>").text(`${collegeWebsite}`);
+
+
+
+
+
+
+
+
+
 
 
 var button = $(".Btn");
