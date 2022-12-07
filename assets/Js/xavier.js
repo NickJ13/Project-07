@@ -4,7 +4,7 @@ function getSingleSeasonStatsByTeamAndCurrentYear(teamName="Rutgers"){
         headers: {
             "Authorization": "Bearer NjbIvt5CZURrTLM3snOfwmg9qhSrVzB3UJ6Pn2JFIGmS0Zf1ANV5nkMKth9De+4W",
             "accept": "application/json",
-            "Access-Control-Allow-Origin": "https://nickj13.github.io/Project-07"
+            "Access-Control-Allow-Origin": "https://nickj13.github.io/"
     },
         url: queryURL,
         method: "GET"
