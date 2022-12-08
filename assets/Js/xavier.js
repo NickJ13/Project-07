@@ -30,36 +30,38 @@
     // })
 // }
 
-var college1Data = []
-var college2Data = []
 
-async function returnFootballStats(name) {
-    var queryURL = 'http://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/' + name
-    var data = await $.ajax({
-        url: queryURL,
-        method: 'GET'
-    }).then(function(res) {
-        var data = []
-        data.push(res.team.name, res.team.record.items[0].summary, res.team.standingSummary, res.team.links[0].href)
-        console.log(data)
-        return data
-    })
-    return data;
-}
+// var football1Data = []
+// var football2Data = []
 
-$('.btn').click(async function (event) {
-    event.preventDefault();
-    college1Data = []
-    college2Data = []
-    var college1 = $('#college-1').val();
-    var college1Complete = await returnFootballStats(college1);
-    college1Data.concat(college1Complete);
-    console.log(college1Complete)
-    var college2 = $('#college-2').val();
-    var college2Complete = await returnFootballStats(college2)
-    college2Data.concat(college2Complete);
-    console.log(college2Complete)
-})
+// async function returnFootballStats(name) {
+//     var queryURL = 'http://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/' + name
+//     var data = await $.ajax({
+//         url: queryURL,
+//         method: 'GET'
+//     }).then(function(res) {
+//         var data = []
+//         data.push(res.team.name, res.team.record.items[0].summary, res.team.standingSummary, res.team.links[0].href)
+//         console.log(data)
+//         return data
+//     })
+//     return data;
+// }
+
+// $('.btn').click(async function (event) {
+//     event.preventDefault();
+    // football1Data = []
+    // football2Data = []
+    // var college1 = $('#college-1').val();
+    // var football1Complete = await returnFootballStats(college1);
+    // football1Data.concat(football1Complete);
+    // console.log(college1Complete)
+    // var college2 = $('#college-2').val();
+    // var football2Complete = await returnFootballStats(college2)
+    // football2Data.concat(football2Complete);
+    // console.log(college2Complete)
+// 
+
 
 // getSingleSeasonStatsByTeamAndCurrentYear();
 
