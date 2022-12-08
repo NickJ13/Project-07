@@ -13,49 +13,83 @@ $("#collegeTwoSportsStats").text(`${college2} Sports Stats`)
 
 var collegeOneStatsDiv = $("<div id='collegeOneSchoolStats'>")
 
-var collegeCity = res.city;
-var collegeCityText = $("<p1>").text(`${collegeCity}`);
-collegeOneStatsDiv.append(collegeCityText)
+var collegeOneCity = res[1].latest.school.city;
+var collegeOneCityText = $("<p1>").text(`${collegeOneCity}`);
+collegeOneStatsDiv.append(collegeOneCityText)
 
-var collegeState = res.state;
-var collegeStateText = $("<p2>").text(`${collegeState}`);
-collegeOneStatsDiv.append(collegeStateText)
+var collegeOnePop = res[1].latest.student.size;
+var collegeOnePopText = $("<p2>").text(`${collegeOnePop}`);
+collegeOneStatsDiv.append(collegeOnePopText)
 
-var collegeWebsite = res.school_url;
-var collegeWebsiteText = $("<p3>").text(`${collegeWebsite}`);
-collegeOneStatsDiv.append(collegeWebsiteText)
+var collegeOneTuition = res[1].latest.cost.tuition.in_state;
+var collegeOneTuitionText = $("<p3>").text(`${collegeOneTuition}`);
+collegeOneStatsDiv.append(collegeOneTuitionText)
+
+var collegeOneWebsite = res[1].latest.school.school_url;
+var collegeOneWebsiteText = $("<p3>").text(`${collegeOneWebsite}`);
+collegeOneStatsDiv.append(collegeOneWebsiteText)
 
 // break
 
 var collegeTwoStatsDiv = $("<div id='collegeTwoSchoolStats'>")
 
-var collegeCity = res.city;
-var collegeCityText = $("<p1>").text(`${collegeCity}`);
-collegeTwoStatsDiv.append(collegeCityText)
+var collegeTwoCity = res[1].latest.school.city;
+var collegeTwoCityText = $("<p1>").text(`${collegeTwoCity}`);
+collegeTwoStatsDiv.append(collegeTwoCityText)
 
-var collegeState = res.state;
-var collegeStateText = $("<p2>").text(`${collegeState}`);
-collegeTwoStatsDiv.append(collegeStateText)
+var collegeTwoPop = res[1].latest.student.size;
+var collegeTwoPopText = $("<p2>").text(`${collegeTwoPop}`);
+collegeTwoStatsDiv.append(collegeTwoPopText)
 
-var collegeWebsite = res.school_url;
-var collegeWebsiteText = $("<p3>").text(`${collegeWebsite}`);
-collegeOneStatsDiv.append(collegeWebsiteText)
+var collegeTwoTuition = res[1].latest.cost.tuition.in_state;
+var collegeTwoTuitionText = $("<p3>").text(`${collegeTwoTuition}`);
+collegeTwoStatsDiv.append(collegeTwoTuitionText)
+
+var collegeTwoWebsite = res[1].latest.school.school_url;
+var collegeTwoWebsiteText = $("<p3>").text(`${collegeTwoWebsite}`);
+collegeTwoStatsDiv.append(collegeTwoWebsiteText)
 
 //break
 
-var collegeTwoSportsDiv = $("<div id='collegeOneSportStats'>")
+var collegeOneSportsDiv = $("<div id='collegeOneSportStats'>")
 
-var teamMastcot = res.mascot;
-var teamMascotText = $("<p1>").text(`${teamMascot}`);
-collegeTwoSportsDiv.append(teamMascotText)
+var teamOneName = res.team.name;
+var teamOneNameText = $("<p1>").text(`${teamOneName}`);
+collegeOneSportsDiv.append(teamOneName)
 
-var teamConf = res.confrence;
-var teamConfText = $("<p2>").text(`${teamConf}`);
-collegeTwoSportsDiv.append(teamConfText)
+var teamOneRecord = res.team.record.items[1].summary;
+var teamOneRecordText = $("<p2>").text(`${teamOneRecord}`);
+collegeOneSportsDiv.append(teamOneRecordText)
 
-var teamRecord = res.record;
-var teamRecordText = $("<p3>").text(`${teamRecord}`);
-collegeTwoSportsDiv.append(teamRecordText)
+var teamOneConf = res.standingSummary;
+var teamOneConfText = $("<p3>").text(`${teamOneConf}`);
+collegeOneSportsDiv.append(teamOneConfText)
+
+var teamOneWeb = res.team.links[0].href;
+var teamOneWebText = $("<p3>").text(`${teamOneWeb}`);
+collegeOneSportsDiv.append(teamOneWebText)
+
+//break
+
+var collegeTwoSportsDiv = $("<div id='collegeTwoSportStats'>")
+
+var teamTwoName = res.team.name;
+var teamTwoNameText = $("<p1>").text(`${teamTwoName}`);
+collegeTwoSportsDiv.append(teamTwoNameText)
+
+var teamTwoRecord = res.team.record.items[1].summary;
+var teamTwoRecordText = $("<p2>").text(`${teamTwoRecord}`);
+collegeTwoSportsDiv.append(teamTwoRecordText)
+
+var teamTwoConf = res.standingSummary;
+var teamTwoConfText = $("<p3>").text(`${teamTwoConf}`);
+collegeTwoSportsDiv.append(teamTwoConfText)
+
+var teamTwoWeb = res.team.links[0].href;
+var teamTwoWebText = $("<p3>").text(`${teamOneWeb}`);
+collegeTwoSportsDiv.append(teamTwoWebText)
+
+
 
 
 
