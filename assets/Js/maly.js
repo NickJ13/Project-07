@@ -13,33 +13,41 @@ $("#collegeTwoSportsStats").text(`${college2} Sports Stats`)
 
 var collegeOneStatsDiv = $("<div id='collegeOneSchoolStats'>")
 
-var collegeOneCity = res.city;
-var collegeOneCityText = $("<p1>").text(`${collegeCity}`);
+var collegeOneCity = res[1].latest.school.city;
+var collegeOneCityText = $("<p1>").text(`${collegeOneCity}`);
 collegeOneStatsDiv.append(collegeOneCityText)
 
-var collegeState = res.state;
-var collegeStateText = $("<p2>").text(`${collegeState}`);
-collegeOneStatsDiv.append(collegeStateText)
+var collegeOnePop = res[1].latest.student.size;
+var collegeOnePopText = $("<p2>").text(`${collegeOnePop}`);
+collegeOneStatsDiv.append(collegeOnePopText)
 
-var collegeWebsite = res.school_url;
-var collegeWebsiteText = $("<p3>").text(`${collegeWebsite}`);
-collegeOneStatsDiv.append(collegeWebsiteText)
+var collegeOneTuition = res[1].latest.cost.tuition.in_state;
+var collegeOneTuitionText = $("<p3>").text(`${collegeOneTuition}`);
+collegeOneStatsDiv.append(collegeOneTuitionText)
+
+var collegeOneWebsite = res[0].latest.school.school_url;
+var collegeOneWebsiteText = $("<p3>").text(`${collegeOneWebsite}`);
+collegeOneStatsDiv.append(collegeOneWebsiteText)
 
 // break
 
 var collegeTwoStatsDiv = $("<div id='collegeTwoSchoolStats'>")
 
-var collegeCity = res.city;
-var collegeCityText = $("<p1>").text(`${collegeCity}`);
-collegeTwoStatsDiv.append(collegeCityText)
+var collegeTwoCity = res[1].latest.school.city;
+var collegeTwoCityText = $("<p1>").text(`${collegeTwoCity}`);
+collegeTwoStatsDiv.append(collegeTwoCityText)
 
-var collegeState = res.state;
-var collegeStateText = $("<p2>").text(`${collegeState}`);
-collegeTwoStatsDiv.append(collegeStateText)
+var collegeTwoPop = res[1].latest.student.size;
+var collegeTwoPopText = $("<p2>").text(`${collegeTwoPop}`);
+collegeTwoStatsDiv.append(collegeTwoPopText)
 
-var collegeWebsite = res.school_url;
-var collegeWebsiteText = $("<p3>").text(`${collegeWebsite}`);
-collegeOneStatsDiv.append(collegeWebsiteText)
+var collegeTwoTuition = res[1].latest.cost.tuition.in_state;
+var collegeTwoTuitionText = $("<p3>").text(`${collegeTwoTuition}`);
+collegeTwoStatsDiv.append(collegeTwoTuitionText)
+
+var collegeTwoWebsite = res[0].latest.school.school_url;
+var collegeTwoWebsiteText = $("<p3>").text(`${collegeTwoWebsite}`);
+collegeTwoStatsDiv.append(collegeTwoWebsiteText)
 
 //break
 
