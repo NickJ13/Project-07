@@ -1,8 +1,11 @@
 
 var football1Data = []; //team name, record, conference standing, website.
 var football2Data = [];
-var college1Data = []; // city, population, tuition, school website, state.
+var college1Data = []; // schoo name, city, population, tuition, school website, state.
 var college2Data = [];
+// var colleges = [{
+//     name, city, size, etc
+// }, {nam...}, ]
 
 async function returnData(name) {
   var queryURL =
@@ -18,7 +21,14 @@ async function returnData(name) {
       return b.latest.student.size - a.latest.student.size;
     });
     var data = [];
+    var schoolData = {
+        name: unsortedList[0].latest.school.name,
+        city: unsortedList[0].latest.school.city,
+        size: unsortedList[0].latest.student.size,
+
+    }
     data.push(
+      unsortedList[0].latest.school.name,
       unsortedList[0].latest.school.city,
       unsortedList[0].latest.student.size,
       unsortedList[0].latest.cost.tuition.in_state,
@@ -52,10 +62,11 @@ async function returnFootballStats(name) {
 
 $(".btn").click(async function (event) {
   event.preventDefault();
-  football1Data = [];
-  football2Data = [];
+  football1Data = {};
+  football2Data = {};
   college1Data = [];
   college2Data = [];
+//   colleges = [];
   var college1 = $("#college-1").val();
   football1Data = await returnFootballStats(college1);
   //   football1Data.concat(football1Complete);
