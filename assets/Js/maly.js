@@ -13,9 +13,9 @@ $("#collegeTwoSportsStats").text(`${college2} Sports Stats`)
 
 var collegeOneStatsDiv = $("<div id='collegeOneSchoolStats'>")
 
-var collegeCity = res.city;
-var collegeCityText = $("<p1>").text(`${collegeCity}`);
-collegeOneStatsDiv.append(collegeCityText)
+var collegeOneCity = res.city;
+var collegeOneCityText = $("<p1>").text(`${collegeCity}`);
+collegeOneStatsDiv.append(collegeOneCityText)
 
 var collegeState = res.state;
 var collegeStateText = $("<p2>").text(`${collegeState}`);
@@ -43,19 +43,37 @@ collegeOneStatsDiv.append(collegeWebsiteText)
 
 //break
 
-var collegeTwoSportsDiv = $("<div id='collegeOneSportStats'>")
+var collegeOneSportsDiv = $("<div id='collegeOneSportStats'>")
 
-var teamMastcot = res.mascot;
-var teamMascotText = $("<p1>").text(`${teamMascot}`);
-collegeTwoSportsDiv.append(teamMascotText)
+var teamOneName = res.team.displayName;
+var teamOneNameText = $("<p1>").text(`${teamOneName}`);
+collegeOneSportsDiv.append(teamOneName)
 
-var teamConf = res.confrence;
-var teamConfText = $("<p2>").text(`${teamConf}`);
-collegeTwoSportsDiv.append(teamConfText)
+var teamOneRecord = res.record[0].summary;
+var teamOneRecordText = $("<p2>").text(`${teamOneRecord}`);
+collegeOneSportsDiv.append(teamOneRecordText)
 
-var teamRecord = res.record;
-var teamRecordText = $("<p3>").text(`${teamRecord}`);
-collegeTwoSportsDiv.append(teamRecordText)
+var teamOneConf = res.standingSummary;
+var teamOneConfText = $("<p3>").text(`${teamOneConf}`);
+collegeOneSportsDiv.append(teamOneConfText)
+
+//break
+
+var collegeTwoSportsDiv = $("<div id='collegeTwoSportStats'>")
+
+var teamTwoName = res.team.displayName;
+var teamTwoNameText = $("<p1>").text(`${teamTwoName}`);
+collegeTwoSportsDiv.append(teamTwoNameText)
+
+var teamTwoRecord = res.record[0].summary;
+var teamTwoRecordText = $("<p2>").text(`${teamTwoRecord}`);
+collegeTwoSportsDiv.append(teamTwoRecordText)
+
+var teamTwoConf = res.standingSummary;
+var teamTwoConfText = $("<p3>").text(`${teamTwoConf}`);
+collegeTwoSportsDiv.append(teamTwoConfText)
+
+
 
 
 
