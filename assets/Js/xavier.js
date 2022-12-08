@@ -33,34 +33,32 @@
 var college1Data = []
 var college2Data = []
 
-function returnFootballStats(name) {
+async function returnFootballStats(name) {
     var queryURL = 'http://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/' + name
-    $.ajax({
+    var data = await $.ajax({
         url: queryURL,
         method: 'GET'
     }).then(function(res) {
-        // console.log(res)
         var data = []
-        data.push(res.team.name)
-        data.push(res.team.record.items[0].summary)
-        data.push(res.team.standingSummary)
-        data.push(res.team.links[0].href)
+        data.push(res.team.name, res.team.record.items[0].summary, res.team.standingSummary, res.team.links[0].href)
         console.log(data)
         return data
     })
+    return data;
 }
 
-$('.btn').click(function (event) {
+$('.btn').click(async function (event) {
     event.preventDefault();
+    college1Data = []
+    college2Data = []
     var college1 = $('#college-1').val();
-    college1Data = returnFootballStats(college1);
-    console.log(college1Data)
+    var college1Complete = await returnFootballStats(college1);
+    college1Data.concat(college1Complete);
+    console.log(college1Complete)
     var college2 = $('#college-2').val();
-    college2Data = returnFootballStats(college2);
-    console.log(college2Data)
-
-
-
+    var college2Complete = await returnFootballStats(college2)
+    college2Data.concat(college2Complete);
+    console.log(college2Complete)
 })
 
 // getSingleSeasonStatsByTeamAndCurrentYear();
