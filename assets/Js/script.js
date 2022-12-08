@@ -1,3 +1,4 @@
+
 var football1Data = []; //team name, record, conference standing, website.
 var football2Data = [];
 var college1Data = []; // city, population, tuition, school website, state.
@@ -68,3 +69,4 @@ $(".btn").click(async function (event) {
   console.log(college1Data);
   console.log(college2Data);
 });
+
