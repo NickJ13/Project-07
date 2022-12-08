@@ -65,6 +65,10 @@ var teamOneConf = res.standingSummary;
 var teamOneConfText = $("<p3>").text(`${teamOneConf}`);
 collegeOneSportsDiv.append(teamOneConfText)
 
+var teamOneWeb = res.team.links[0].href;
+var teamOneWebText = $("<p3>").text(`${teamOneWeb}`);
+collegeOneSportsDiv.append(teamOneWebText)
+
 //break
 
 var collegeTwoSportsDiv = $("<div id='collegeTwoSportStats'>")
@@ -80,6 +84,10 @@ collegeTwoSportsDiv.append(teamTwoRecordText)
 var teamTwoConf = res.standingSummary;
 var teamTwoConfText = $("<p3>").text(`${teamTwoConf}`);
 collegeTwoSportsDiv.append(teamTwoConfText)
+
+var teamTwoWeb = res.team.links[0].href;
+var teamTwoWebText = $("<p3>").text(`${teamTwoWeb}`);
+collegeTwoSportsDiv.append(teamTwoWebText)
 
 
 
