@@ -5,8 +5,8 @@
 // console.log(queryURL);
 
 function returnData(name){
-    var splitName = name.replaceAll(' ', '%20');
-    var queryURL = 'https://api.data.gov/ed/collegescorecard/v1/schools?school.name=' + splitName + '&api_key=kh5rCjQLNGljULfkmR1gb4fSHmO157RceOJDxMCZ';
+    //var splitName = name.replaceAll(' ', '%20');
+    var queryURL = 'https://api.data.gov/ed/collegescorecard/v1/schools?school.name=' + name + '&api_key=kh5rCjQLNGljULfkmR1gb4fSHmO157RceOJDxMCZ';
     $.ajax({
         url: queryURL,
         method: "GET"
