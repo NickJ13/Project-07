@@ -1,37 +1,44 @@
 
 
-$("#collegeOneName").text(`${college1}`)
-$("#collegeTwoName").text(`${college2}`)
-
-$("#collegeOneSchoolStats").text(`${college1} School Stats`)
-$("#collegeTwoSchoolStats").text(`${college2} School Stats`)
-
-$("#collegeOneSportsStats").text(`${college1} Sports Stats`)
-$("#collegeTwoSportsStats").text(`${college2} Sports Stats`)
-
+$("#collegeOneName").text(college1Data[0]);
+$("#collegeTwoName").text(college2Data[0]);
+// $("#collegeOneSchoolStats").text(`${college1} School Stats`);
+// $("#collegeTwoSchoolStats").text(`${college2} School Stats`);
+// $("#collegeOneSportsStats").text(`${college1} Sports Stats`);
+// $("#collegeTwoSportsStats").text(`${college2} Sports Stats`);
 // break
+
+function displayData (dataToDisplay) { // dataToDisplay => [{name, city, size, tuition, school_url, state},{name, city, size, tuition, school_url, state}]
+    var college1StatsDiv = $("<div id='college1SchoolStats'>")
+    var college2StatsDiv = $("<div id='college2SchoolStats'>")
+    for (var i = 0; i < dataToDisplay.length; i++) {
+        var html = `<p>${dataToDisplay[i].name}</p><p>${dataToDisplay[i].city}</p><p></p><p></p><p></p>`;
+        $(`<div id='college${i+1}SchoolStats'>`).html(html);
+    }
+
+}
 
 var collegeOneStatsDiv = $("<div id='collegeOneSchoolStats'>")
 
-var collegeOneCity = res[1].latest.school.city;
-var collegeOneCityText = $("<p1>").text(`${collegeOneCity}`);
+var collegeOneCity = college1Data[0];
+var collegeOneCityText = $("<p>").text(`${college1Data.name}`);
 collegeOneStatsDiv.append(collegeOneCityText)
 
-var collegeOnePop = res[1].latest.student.size;
-var collegeOnePopText = $("<p2>").text(`${collegeOnePop}`);
+var collegeOnePop = college1Data[1];
+var collegeOnePopText = $("<p>").text(`${collegeOnePop}`);
 collegeOneStatsDiv.append(collegeOnePopText)
 
-var collegeOneTuition = res[1].latest.cost.tuition.in_state;
-var collegeOneTuitionText = $("<p3>").text(`${collegeOneTuition}`);
+var collegeOneTuition = college1Data[2];
+var collegeOneTuitionText = $("<p>").text(`${collegeOneTuition}`);
 collegeOneStatsDiv.append(collegeOneTuitionText)
 
-var collegeOneWebsite = res[1].latest.school.school_url;
-var collegeOneWebsiteText = $("<p3>").text(`${collegeOneWebsite}`);
+var collegeOneWebsite = college1Data[3];
+var collegeOneWebsiteText = $("<p>").text(`${collegeOneWebsite}`);
 collegeOneStatsDiv.append(collegeOneWebsiteText)
 
 // break
 
-var collegeTwoStatsDiv = $("<div id='collegeTwoSchoolStats'>")
+// var collegeTwoStatsDiv = $("<div id='collegeTwoSchoolStats'>")
 
 var collegeTwoCity = res[1].latest.school.city;
 var collegeTwoCityText = $("<p1>").text(`${collegeTwoCity}`);
