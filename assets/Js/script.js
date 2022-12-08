@@ -11,6 +11,15 @@ function returnData(name){
         url: queryURL,
         method: "GET"
     }).then(function(res) {
+        var unsortedList = res.results;
+        unsortedList.sort(function(a, b){
+            return b.latest.student.size - a.latest.student.size;
+        });
+        
+        console.log(unsortedList);
+        
+        // console.log(res.results[0].latest.student.size);
+        console.log(res.results[0].school.name);
         console.log(res);
     })
 }
