@@ -25,7 +25,7 @@ var collegeOneTuition = res[1].latest.cost.tuition.in_state;
 var collegeOneTuitionText = $("<p3>").text(`${collegeOneTuition}`);
 collegeOneStatsDiv.append(collegeOneTuitionText)
 
-var collegeOneWebsite = res[0].latest.school.school_url;
+var collegeOneWebsite = res[1].latest.school.school_url;
 var collegeOneWebsiteText = $("<p3>").text(`${collegeOneWebsite}`);
 collegeOneStatsDiv.append(collegeOneWebsiteText)
 
@@ -45,7 +45,7 @@ var collegeTwoTuition = res[1].latest.cost.tuition.in_state;
 var collegeTwoTuitionText = $("<p3>").text(`${collegeTwoTuition}`);
 collegeTwoStatsDiv.append(collegeTwoTuitionText)
 
-var collegeTwoWebsite = res[0].latest.school.school_url;
+var collegeTwoWebsite = res[1].latest.school.school_url;
 var collegeTwoWebsiteText = $("<p3>").text(`${collegeTwoWebsite}`);
 collegeTwoStatsDiv.append(collegeTwoWebsiteText)
 
@@ -53,11 +53,11 @@ collegeTwoStatsDiv.append(collegeTwoWebsiteText)
 
 var collegeOneSportsDiv = $("<div id='collegeOneSportStats'>")
 
-var teamOneName = res.team.displayName;
+var teamOneName = res.team.name;
 var teamOneNameText = $("<p1>").text(`${teamOneName}`);
 collegeOneSportsDiv.append(teamOneName)
 
-var teamOneRecord = res.record[0].summary;
+var teamOneRecord = res.team.record.items[1].summary;
 var teamOneRecordText = $("<p2>").text(`${teamOneRecord}`);
 collegeOneSportsDiv.append(teamOneRecordText)
 
@@ -73,11 +73,11 @@ collegeOneSportsDiv.append(teamOneWebText)
 
 var collegeTwoSportsDiv = $("<div id='collegeTwoSportStats'>")
 
-var teamTwoName = res.team.displayName;
+var teamTwoName = res.team.name;
 var teamTwoNameText = $("<p1>").text(`${teamTwoName}`);
 collegeTwoSportsDiv.append(teamTwoNameText)
 
-var teamTwoRecord = res.record[0].summary;
+var teamTwoRecord = res.team.record.items[1].summary;
 var teamTwoRecordText = $("<p2>").text(`${teamTwoRecord}`);
 collegeTwoSportsDiv.append(teamTwoRecordText)
 
@@ -86,7 +86,7 @@ var teamTwoConfText = $("<p3>").text(`${teamTwoConf}`);
 collegeTwoSportsDiv.append(teamTwoConfText)
 
 var teamTwoWeb = res.team.links[0].href;
-var teamTwoWebText = $("<p3>").text(`${teamTwoWeb}`);
+var teamTwoWebText = $("<p3>").text(`${teamOneWeb}`);
 collegeTwoSportsDiv.append(teamTwoWebText)
 
 
