@@ -2,8 +2,7 @@
 // var football2Data = [];
 // var college1Data = []; // schoo name, city, population, tuition, school website, state.
 // var college2Data = [];
-var colleges = [
-  {
+var data1 = {
     name: "",
     city: "",
     size: 0,
@@ -14,8 +13,8 @@ var colleges = [
     record: "",
     standing: "",
     teamUrl: "",
-  },
-  {
+  }
+  var data2 = {
     name: "",
     city: "",
     size: 0,
@@ -26,8 +25,7 @@ var colleges = [
     record: "",
     standing: "",
     teamUrl: "",
-  },
-];
+  };
 
 async function returnData(name) {
   var queryURL =
@@ -97,22 +95,56 @@ $(".btn").click(async function (event) {
 //   college2Data = [];
 // colleges = [];
   var college1 = $("#college-1").val();
-  football1Data = await returnFootballStats(college1);
+  var football1Data = await returnFootballStats(college1);
   //   football1Data.concat(football1Complete);
-  college1Data = await returnData(college1);
+  var college1Data = await returnData(college1);
   var college2 = $("#college-2").val();
-  football2Data = await returnFootballStats(college2);
+  var football2Data = await returnFootballStats(college2);
   //   football2Data.concat(football2Complete);
-  college2Data = await returnData(college2);
-  colleges[0].name=colleges1data.name
-  colleges[0].name=colleges1data.name
+  var college2Data = await returnData(college2);
+  // colleges[0].name=colleges1data.name
+  // colleges[0].name=colleges1data.name
+  data1.name=college1Data.name
+  data1.city=college1Data.city
+  data1.size=college1Data.size
+  data1.tuition=college1Data.tuition
+  data1.url=college1Data.url
+  data1.state=college1Data.state
+  data2.name=college2Data.name
+  data2.city=college2Data.city
+  data2.size=college2Data.size
+  data2.tuition=college2Data.tuition
+  data2.url=college2Data.url
+  data2.state=college2Data.state
 
-  for (var i = 0; i < college1Data.length; i++) {
-    colleges[0][i]=college1Data[i]
-    }
+  data1.teamName = football1Data.teamName
+  data1.record = football1Data.record
+  data1.standing = football1Data.standing
+  data1.teamUrl = football1Data.teamUrl
+  data2.teamName = football2Data.teamName
+  data2.record = football2Data.record
+  data2.standing = football2Data.standing
+  data2.teamUrl = football2Data.teamUrl
 
-  console.log(football1Data);
-  console.log(football2Data);
-  console.log(college1Data);
-  console.log(college2Data);
+
+  // for (var i=6; i<data1.length; i++) {
+  //   data1[i]=football1Data[i]
+  //   data2[i]=football2Data[i]
+  // }
+
+  // colleges.forEach(i => {
+  //   for (let n in i) {
+  //     i[n]=0
+  //     i[n]=1
+  //   }
+  // })
+
+  // console.log(football1Data);
+  // console.log(football2Data);
+  // console.log(college1Data);
+  // console.log(college2Data);
+  console.log(data1, data2)
 });
+
+
+// schoo name, city, population, tuition, school website, state
