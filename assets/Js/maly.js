@@ -12,10 +12,22 @@ function displayData (dataToDisplay) { // dataToDisplay => [{name, city, size, t
     var college1StatsDiv = $("<div id='college1SchoolStats'>")
     var college2StatsDiv = $("<div id='college2SchoolStats'>")
     for (var i = 0; i < dataToDisplay.length; i++) {
-        var html = `<p>${dataToDisplay[i].name}</p><p>${dataToDisplay[i].city}</p><p></p><p></p><p></p>`;
-        $(`<div id='college${i+1}SchoolStats'>`).html(html);
-    }
+        var html = `<p>${dataToDisplay[i].name}</p>
+        <p>${dataToDisplay[i].city}</p>
+        <p>${dataToDisplay[i].size}</p>
+        <p>${dataToDisplay[i].tuition}</p>
+        <p>${dataToDisplay[i].url}</p>
+        <p>${dataToDisplay[i].state}</p>
+        <p>${dataToDisplay[i].teamName}</p>
+        <p>${dataToDisplay[i].record}</p>
+        <p>${dataToDisplay[i].standing}</p>
+        <p>${dataToDisplay[i].teamUrl}</p>`
+        ;
 
+        $(`<div id='college${i+1}SchoolStats'>`).html(html);
+        console.log(college1StatsDiv)
+        console.log(college2StatsDiv)
+    }
 }
 
 var collegeOneStatsDiv = $("<div id='collegeOneSchoolStats'>")
