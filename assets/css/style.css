@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(133, 130, 130);
+    background-color: rgb(255, 255, 255);
 }
 
 header {
@@ -7,6 +7,15 @@ header {
 }
 
 main {
-   background-color: rgb(227, 238, 248);
+   background-color: rgb(255, 255, 255);
    text-align: center;
+   font-size: 25px;
 }
+
+#college1SchoolStats {
+    border-style: solid;
+}
+#college2SchoolStats {
+    border-style: solid;
+}
+

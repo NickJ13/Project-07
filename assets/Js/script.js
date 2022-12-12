@@ -1,7 +1,3 @@
-// var football1Data = []; //team name, record, conference standing, website.
-// var football2Data = [];
-// var college1Data = []; // schoo name, city, population, tuition, school website, state.
-// var college2Data = [];
 var data1 = {
   name: "",
   city: "",
@@ -40,7 +36,6 @@ async function returnData(name) {
     unsortedList.sort(function (a, b) {
       return b.latest.student.size - a.latest.student.size;
     });
-    // var data = [];
     var schoolData = {
       name: unsortedList[0].latest.school.name,
       city: unsortedList[0].latest.school.city,
@@ -49,14 +44,6 @@ async function returnData(name) {
       url: unsortedList[0].latest.school.school_url,
       state: unsortedList[0].latest.school.state,
     };
-    // data.push(
-    //   unsortedList[0].latest.school.name,
-    //   unsortedList[0].latest.school.city,
-    //   unsortedList[0].latest.student.size,
-    //   unsortedList[0].latest.cost.tuition.in_state,
-    //   unsortedList[0].latest.school.school_url,
-    //   unsortedList[0].latest.school.state
-    // );
     return schoolData;
   });
   return schoolData;
@@ -76,12 +63,6 @@ async function returnFootballStats(name) {
       standing: res.team.standingSummary,
       teamUrl: res.team.links[0].href,
     };
-    // data.push(
-    //   res.team.name,
-    //   res.team.record.items[0].summary,
-    //   res.team.standingSummary,
-    //   res.team.links[0].href
-    // );
     return footballData;
   });
   return data;
@@ -107,7 +88,7 @@ var stats2Div = $("#college2SchoolStats")
   var col1stateP = $("<p>").text(`${col1state}`);
   statsDiv.append(col1stateP);
   var col1url = data1.url;
-  var col1urlP = $("<p>").text(`${col1url}`);
+  var col1urlP = $("<a>").attr('href',`${col1url}`).text('College Website');
   statsDiv.append(col1urlP);
   var col1teamName = data1.teamName;
   var col1teamNameP = $("<p>").text(`${col1teamName}`);
@@ -119,7 +100,7 @@ var stats2Div = $("#college2SchoolStats")
   var col1StandingP = $("<p>").text(`${col1Standing}`);
   statsDiv.append(col1StandingP);
   var col1teamUrl = data1.teamUrl;
-  var col1teamUrlP = $("<p>").text(`${col1teamUrl}`);
+  var col1teamUrlP = $("<a>").attr('href',`${col1teamUrl}`).text('Team Site');
   statsDiv.append(col1teamUrlP);
 
   var col2name = data2.name;
@@ -138,7 +119,7 @@ var stats2Div = $("#college2SchoolStats")
   var col2stateP = $("<p>").text(`${col2state}`);
   stats2Div.append(col2stateP);
   var col2url = data2.url;
-  var col2urlP = $("<p>").text(`${col2url}`);
+  var col2urlP = $("<a>").attr('href',`${col2url}`).text('College Website');
   stats2Div.append(col2urlP);
   var col2teamName = data2.teamName;
   var col2teamNameP = $("<p>").text(`${col2teamName}`);
@@ -150,7 +131,7 @@ var stats2Div = $("#college2SchoolStats")
   var col2StandingP = $("<p>").text(`${col2Standing}`);
   stats2Div.append(col2StandingP);
   var col2teamUrl = data2.teamUrl;
-  var col2teamUrlP = $("<p>").text(`${col2teamUrl}`);
+  var col2teamUrlP = $("<a>").attr('href',`${col2teamUrl}`).text('Team Site');
   stats2Div.append(col2teamUrlP);
 
 
@@ -165,14 +146,10 @@ $(".btn").click(async function (event) {
 
   var college1 = $("#college-1").val();
   var football1Data = await returnFootballStats(college1);
-  //   football1Data.concat(football1Complete);
   var college1Data = await returnData(college1);
   var college2 = $("#college-2").val();
   var football2Data = await returnFootballStats(college2);
-  //   football2Data.concat(football2Complete);
   var college2Data = await returnData(college2);
-  // colleges[0].name=colleges1data.name
-  // colleges[0].name=colleges1data.name
   data1.name = college1Data.name;
   data1.city = college1Data.city;
   data1.size = college1Data.size;
@@ -200,21 +177,4 @@ $(".btn").click(async function (event) {
 
 
 });
-// for (var i=6; i<data1.length; i++) {
-//   data1[i]=football1Data[i]
-//   data2[i]=football2Data[i]
-// }
 
-// colleges.forEach(i => {
-//   for (let n in i) {
-//     i[n]=0
-//     i[n]=1
-//   }
-// })
-
-// console.log(football1Data);
-// console.log(football2Data);
-// console.log(college1Data);
-// console.log(college2Data);
-
-// schoo name, city, population, tuition, school website, state
