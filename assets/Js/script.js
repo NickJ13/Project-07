@@ -76,7 +76,8 @@ var stats2Div = $("#college2SchoolStats")
   var col1NameP = $("<p>").text(`${col1name}`);
   statsDiv.append(col1NameP);
   var col1City = data1.city;
-  var col1CityP = $("<p>").text(`${col1City}`);
+  var col1state = data1.state;
+  var col1CityP = $("<p>").text(`${col1City}, ${col1state}`);
   statsDiv.append(col1CityP);
   var col1size = data1.size;
   var col1sizeP = $("<p>").text(`Student Population: ${col1size}`);
@@ -84,9 +85,6 @@ var stats2Div = $("#college2SchoolStats")
   var col1Tuition = data1.tuition;
   var col1TuitionP = $("<p>").text(`In-State Tuition:$${col1Tuition}`);
   statsDiv.append(col1TuitionP);
-  var col1state = data1.state;
-  var col1stateP = $("<p>").text(`${col1state}`);
-  statsDiv.append(col1stateP);
   var col1url = data1.url;
   var col1urlP = $("<a>").attr('href',`${col1url}`).text('College Website');
   statsDiv.append(col1urlP);
@@ -107,7 +105,8 @@ var stats2Div = $("#college2SchoolStats")
   var col2NameP = $("<p>").text(`${col2name}`);
   stats2Div.append(col2NameP);
   var col2City = data2.city;
-  var col2CityP = $("<p>").text(`${col2City}`);
+  var col2state = data2.state;
+  var col2CityP = $("<p>").text(`${col2City}, ${col2state}`);
   stats2Div.append(col2CityP);
   var col2size = data2.size;
   var col2sizeP = $("<p>").text(`Student Population: ${col2size}`);
@@ -115,9 +114,6 @@ var stats2Div = $("#college2SchoolStats")
   var col2Tuition = data2.tuition;
   var col2TuitionP = $("<p>").text(`In-State Tuition:$${col2Tuition}`);
   stats2Div.append(col2TuitionP);
-  var col2state = data2.state;
-  var col2stateP = $("<p>").text(`${col2state}`);
-  stats2Div.append(col2stateP);
   var col2url = data2.url;
   var col2urlP = $("<a>").attr('href',`${col2url}`).text('College Website');
   stats2Div.append(col2urlP);
