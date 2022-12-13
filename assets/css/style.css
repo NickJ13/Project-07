@@ -26,11 +26,8 @@ a {
     color: black;
     text-decoration: underline;
 }
-img {
-    width: 50px;
-    height: auto;
-    position: relative;
-}
+
+
  footer {
     position: absolute;
     bottom: 0%;
